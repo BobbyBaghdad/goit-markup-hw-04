@@ -114,7 +114,6 @@ img {
   margin-left: 50px;
 }
 .header-nav-link {
-  position: relative;
   display: block;
   padding-top: 32px;
   padding-bottom: 32px;
@@ -129,47 +128,8 @@ img {
   color: var(--accent);
 }
 
-.header-nav-link::after {
-  content: '';
-  display: inline-block;
-  position: absolute;
-  height: 5px;
-  background-color: var(--accent);
-  border-radius: 5px;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  transform: scale(0);
-
-  transition: transform 400ms linear;
-}
-
-.header-nav-link:hover::after,
-.header-nav-link:focus::after {
-  transform: scale(1);
-}
-
 .current {
   color: var(--accent);
-}
-
-.current::after {
-  transform: scale(1);
-}
-
-/* .header-nav-link::after {
-  content: '';
-  display: inline-block;
-  position: absolute;
-  height: 5px;
-  background-color: var(--accent);
-  border-radius: 5px;
-  bottom: 12px;
-  left: 0;
-  width: 100%;
-} */
-.header-nav-link:hover::after {
-  width: 100%;
 }
 
 /* Feedback */
@@ -192,16 +152,12 @@ img {
   font-size: 14px;
   line-height: 1.1;
   letter-spacing: 0.02em;
-  transition: transform;
 
   color: currentColor;
 }
 .header-feedback-link:hover,
 .header-feedback-link:focus {
   color: var(--accent);
-  transform: scale(1.2);
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* более короткая запись для замены заливки на иконке */
 .header-feedback-icon {
@@ -261,58 +217,6 @@ img {
   cursor: pointer;
 }
 
-.backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  opacity: 1;
-  visibility: visible;
-  transition-property: opacity, visibility;
-  transition-duration: 500ms;
-}
-.backdrop.is-hidden {
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
-}
-.modal {
-  min-height: 500px;
-  min-width: 500px;
-  padding: 20px;
-  color: red;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  border-radius: 4px;
-  transform: translate(-50%, -50%) rotate(720deg) scale(1);
-  background-color: #fff;
-  opacity: 1;
-
-  transition-property: opacity, transform;
-  transition-duration: 500ms;
-}
-.backdrop.is-hidden .modal {
-  opacity: 0;
-  transform: translate(-50%, -50%) rotate(0deg) scale(1.2);
-}
-.close-modal-button {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  background-color: var(--main-bcgclr);
-  cursor: pointer;
-}
-
 /* SPECS section  */
 .specs-title {
   background-color: var(--titlesection);
@@ -361,21 +265,6 @@ img {
   margin-left: 30px;
 }
 
-.activity-cards {
-  position: relative;
-}
-
-.activity-items {
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
-  text-align: center;
-  width: 100%;
-  padding: 27px 10px;
-  color: var(--icon-secondary-cl);
-  background-color: rgba(47, 48, 58, 0.8);
-}
-
 /*TEAM section */
 .team {
   background-color: var(--activity-section);
@@ -399,7 +288,6 @@ img {
   width: 20px;
   height: 20px;
   fill: var(--icon-main-cl);
-  transition: transform;
 }
 .team-links-icons:not(:last-child) {
   margin-right: 10px;
@@ -448,9 +336,6 @@ img {
 .socials-link:hover,
 .socials-link:focus {
   background-color: var(--accent);
-  transform: scale(1.2);
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .socials-icon {
   fill: var(--icon-main-cl);
@@ -493,9 +378,6 @@ img {
 .clients-item:hover .clients-icons,
 .clients-item:focus .clients-icons {
   fill: var(--accent);
-  transform: scale(1.2);
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* FOOTER */
@@ -562,9 +444,6 @@ img {
 .footer-media-link:hover,
 .footer-media-link:focus {
   background-color: #2196f3;
-  transform: scale(1.2);
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-media-icon {
   fill: var(--icon-secondary-cl);
@@ -601,9 +480,6 @@ img {
   color: var(--main-bcgclr);
   background-color: var(--accent);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  transform: scale(1.2);
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .tools-button.current {
   color: var(--main-bcgclr);
@@ -641,32 +517,4 @@ img {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.9;
-}
-
-.relative {
-  position: relative;
-  overflow: hidden;
-}
-.relative-content {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  bottom: 0;
-  left: 0;
-  padding: 63px 24px;
-
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 28px;
-
-  background-color: var(--btn-main-bg);
-  color: var(--icon-secondary-cl);
-
-  transition-property: transform;
-  transform: translateY(101%);
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-.example-link:hover .relative-content {
-  transform: translateY(0);
 }
